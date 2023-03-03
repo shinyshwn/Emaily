@@ -16,7 +16,7 @@ const app = express();
 // res: response to be send back
 
 app.get('/', (req, res) => {
-    res.send({hi:'there'});
+    res.send({cao:'nima'});
 })
 // passport.use(new GoogleStrategy({
 //     clientID:keys.googleClientID, 
