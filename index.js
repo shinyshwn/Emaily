@@ -4,7 +4,7 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy; 
 // create express application
 const app = express(); 
-const keys = require('./config/keys'); 
+//const keys = require('./config/keys.js'); 
 
 //Create a route handler that watch for incoming HTTP request with a specific method
 //app: Express app to register this route handler with
