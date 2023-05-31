@@ -1,42 +1,18 @@
 //import express 
 const express = require('express'); 
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy; 
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+require('./models/User')
+require('./services/passport');
+
+
+mongoose.connect(keys.mongoURI);
+
 // create express application
 const app = express(); 
-//const keys = require('./config/keys.js'); 
 
-//Create a route handler that watch for incoming HTTP request with a specific method
-//app: Express app to register this route handler with
-//get: watch for incoming reuests with this method
-
-//'/' if its trying to visit localhost:5000 or localhost:5000/ 
-
-// req: incoming request
-// res: response to be send back
-
-app.get('/', (req, res) => {
-    res.send({cao:'nima'});
-})
-// passport.use(new GoogleStrategy({
-//     clientID:keys.googleClientID, 
-//     clientSecret: keys.googleClientSecret, 
-//     callbackURL: '/auth/google/callback'
-// }, (accessToken, refreshToken, profile, done)=>{
-//     console.log('access token', accessToken); 
-//     console.log('refresh token', refreshToken); 
-//     console.log('profile', profile); 
-
-// })
-// ); 
-
-// app.get('/auth/google', passport.authenticate('google', {
-//     scope: ['profile', 'email']
-// })); 
-
-// app.get('/auth/google/callback', passport.authenticate('google'));
-
-// const PORT = process.env.PORT || 5000; 
+//authRoutes is a funtion takes app object and attachs routes to it. 
+require('./routes/authRoutes')(app); 
 
 //Heroku assign port dynamically 
 const PORT = process.env.PORT || 5000

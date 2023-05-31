@@ -7,15 +7,19 @@
     "npm": "8.19.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "4.1",
+    "mongoose": "^7.2.1",
+    "nodemon": "^2.0.22",
     "passport": "^0.6.0",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "password": "^0.1.1"
   },
-  "devDependencies": {},
   "description": ""
 }
