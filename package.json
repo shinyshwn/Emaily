@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js", 
-    "deploy": "git push origin main && git push heroku master && heroku open"
+    "deploy": "git push origin master && git push heroku master && heroku open"
   },
   "author": "",
   "license": "ISC",
